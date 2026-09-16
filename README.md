@@ -2,7 +2,7 @@
 
 A Chrome extension that lets PMs, CSMs, and engineers verify a Statsig web install **without changing the host app**. Open any site, pin the toolbar icon, and read identity, flag health, live events, and session-replay status from the Statsig client already running on the page.
 
-This is a community project. **It is not affiliated with Statsig or Amplitude.**
+This is a community project. **It is not affiliated with Statsig or Amplitude.** See [CONTRIBUTING.md](CONTRIBUTING.md) if you want to build from source, and [PRIVACY.md](PRIVACY.md) for what the extension reads.
 
 ## What it does
 
@@ -154,9 +154,7 @@ pnpm build     # production zip in .output
 
 ## Privacy
 
-- Page data stays in the tab + extension process.
-- The only network the extension itself initiates is optional GET calls to `https://statsigapi.net/console/v1/*` when you save a Console key.
-- SDK keys shown in the UI are masked. Full keys stay in probe memory for instance matching only.
+See [PRIVACY.md](PRIVACY.md). In short: page data stays in the tab and extension process; the only network this extension itself initiates is optional GET calls to `https://statsigapi.net/console/v1/*` when you save a Console key; SDK keys in the UI are masked.
 
 ## License
 
