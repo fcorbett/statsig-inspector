@@ -1,0 +1,50 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 12px 14px 0;
+}
+.top h1 { margin: 0; font-size: 16px; }
+.top .sub { margin: 4px 0 8px; color: #94a3b8; font-size: 12px; }
+.tabs { display: flex; gap: 4px; }
+.tabs button {
+  border: none;
+  background: transparent;
+  color: #cbd5e1;
+  padding: 8px 10px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.tabs button.active {
+  color: white;
+  border-bottom-color: #c4b5fd;
+}
+.body { padding: 12px 14px 24px; display: flex; flex-direction: column; gap: 12px; }
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.toolbar select { padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line); }
+.banner {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #312e81;
+  font-size: 13px;
+}
+.banner.warn { background: #fff7ed; color: #9a3412; }
+.empty { color: var(--muted); font-size: 13px; }
+.net-list { display: flex; flex-direction: column; gap: 6px; font-size: 12px; }
+.net-row {
+  display: grid;
+  grid-template-columns: 86px 48px 1fr;
+  gap: 8px;
+  padding: 6px 8px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}

@@ -1,0 +1,40 @@
+{
+  "name": "statsig-inspector",
+  "description": "Chrome extension that verifies a Statsig web install: identity, flags, live events, and session replay — with no host-app changes.",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "postinstall": "wxt prepare",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "fixtures": "node tests/fixture/serve.mjs"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@wxt-dev/module-react": "^1.1.5",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.6",
+    "@vitejs/plugin-react": "^5.1.2",
+    "vitest": "^3.2.4",
+    "web-ext": "^10.5.0",
+    "wxt": "^0.21.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "@vitejs/plugin-react": "^5.1.2"
+    }
+  }
+}

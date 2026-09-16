@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Statsig Inspector fixture — no userID</title>
+    <style>
+      body { font: 16px/1.4 ui-sans-serif, system-ui; margin: 40px; max-width: 640px; }
+      #status { font-family: ui-monospace, monospace; }
+    </style>
+  </head>
+  <body>
+    <h1>Initialized with an empty user</h1>
+    <p>Status: <span id="status">loading</span></p>
+    <button id="cta">Click me</button>
+    <script src="./payload.js"></script>
+    <script src="./boot.js"></script>
+    <script>
+      (async () => {
+        const { StatsigClient, runStatsigAutoCapture, runStatsigSessionReplay } =
+          await FIXTURE.loadStatsig();
+        const client = new StatsigClient(
+          FIXTURE.DUMMY_KEY,
+          {},
+          { environment: { tier: 'development' } },
+        );
+        runStatsigSessionReplay(client);
+        runStatsigAutoCapture(client);
+        FIXTURE.bootstrapClient(client, {}, FIXTURE_PAYLOAD);
+        FIXTURE.setStatus(client.loadingStatus);
+        window.__FIXTURE_CLIENT__ = client;
+      })().catch((err) => FIXTURE.setStatus(String(err)));
+    </script>
+  </body>
+</html>
